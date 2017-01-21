@@ -21,12 +21,14 @@ RUN chmod 755 /plexpy.sh
 
 RUN export VERSION=v1.4.16 \
     && apt-get -q update \
-    && apt-get install -qy curl ca-certificates python \
+    && apt-get install -qy curl ca-certificates python-setuptools build-essential python-dev libssl-dev  \
+    && easy_install pip \
     && curl -o /tmp/plexpy.tar.gz https://codeload.github.com/JonnyWong16/plexpy/tar.gz/${VERSION} \
     && tar xzf /tmp/plexpy.tar.gz \
     && mv plexpy-* plexpy \
     && chown -R plexpy: plexpy \
-    && apt-get -y remove curl \
+    && pip install pyOpenSSL \
+    && apt-get -y remove curl build-essential python-dev libssl-dev \
     && apt-get -y autoremove \
     && apt-get -y clean \
     && rm -rf /var/lib/apt/lists/* \
