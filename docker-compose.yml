@@ -1,0 +1,9 @@
+---
+plexpy:
+    build: .
+    container_name: 'plexpy'
+    volumes:
+        - './data/datadir:/datadir'
+    ports:
+        - 8181:8181
+    restart: 'always'
