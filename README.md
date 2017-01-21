@@ -51,6 +51,8 @@ Please mount the following volumes inside your PlexPy container:
 
 * `/datadir`: Holds all the PlexPy data files (e.g. config, database)
 
+You might also want to mount the `Logs` directory of your Plex server into the container, in case you want to have access to the logs.
+
 ### Configuration file
 
 By default the PlexPy configuration is located on `/datadir/config.ini`.
