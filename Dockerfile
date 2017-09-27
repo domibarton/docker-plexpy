@@ -19,7 +19,7 @@ RUN chmod 755 /plexpy.sh
 # Install PlexPy and all required dependencies.
 #
 
-RUN export VERSION=v1.4.17 \
+RUN export VERSION=v1.4.22 \
     && apt-get -q update \
     && apt-get install -qy curl ca-certificates python-setuptools build-essential python-dev libssl-dev  \
     && easy_install pip \
